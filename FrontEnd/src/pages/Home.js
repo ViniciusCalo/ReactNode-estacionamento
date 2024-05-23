@@ -15,7 +15,7 @@ const Home = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>
-                <Image source={require('../assets/estacionamento.png')}
+                <Image source={require('../assets/estacionamento.jpg')}
                     style={styles.image} />
             </View>
 

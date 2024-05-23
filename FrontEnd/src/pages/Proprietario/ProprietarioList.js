@@ -3,13 +3,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Button, Icon, ListItem } from "react-native-elements";
 import styles from './styles.js';
-
 export default ProprietarioList => {
-
-    //Variável que recebe os dados da API 
+    //Variável que recebe os dados da API
     const [proprietarios, setProprietarios] = useState([]);
-
-    //Função que Deleta os dados utilizando a API 
+    //Função que Deleta os dados utilizando a API
     const handleDelete = async (id) => {
         try {
             await axios.delete(`http://localhost:8081/proprietario/${id}`);
@@ -18,8 +15,7 @@ export default ProprietarioList => {
             console.log(err);
         }
     };
-
-    //Função que Lista os dados utilizando a API  
+    //Função que Lista os dados utilizando a API
     const fetchAllProprietarios = async () => {
         try {
             const res = await
@@ -30,16 +26,14 @@ export default ProprietarioList => {
             console.log(err);
         }
     };
-
-    //Função que inicia a listagem ao abrir o App 
+    //Função que inicia a listagem ao abrir o App
     useEffect(() => {
         fetchAllProprietarios();
     }, []);
-    //Função para criar os botões Deletar e Editar na Função Lustagem 
+    //Função para criar os botões Deletar e Editar na Função Lustagem
     function getActions(data) {
         return (
             <>
-
                 <Button
                     onPress={() =>
                         ProprietarioList.navigation.navigate('ProprietarioEdit', data)}
@@ -54,7 +48,7 @@ export default ProprietarioList => {
             </>
         );
     }
-    //Função que preenche a Lista e Joga no FlatList 
+    //Função que preenche a Lista e Joga no FlatList
     function Listagem({ data }) {
         return (
             <ListItem bottomDivider >
@@ -78,4 +72,4 @@ export default ProprietarioList => {
             />
         </SafeAreaView>
     )
-} 
+}
