@@ -1,5 +1,5 @@
-import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native'; 
-import React from 'react';
+import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React from 'react'
 
 const Home = ({ navigation }) => {
 
@@ -15,7 +15,7 @@ const Home = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.imageContainer}>
-                <Image source={require('../assets/estacionamento.jpg')}
+                <Image source={require('../assets/estacionamento.png')}
                     style={styles.image} />
             </View>
 
@@ -63,4 +63,4 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
 });
-export default Home; 
+export default Home;

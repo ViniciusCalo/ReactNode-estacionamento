@@ -5,7 +5,7 @@ import styles from './styles.js';
 
 export default ({ route, navigation }) => {
     // Variável que recebe os dados da Lista e preeche os campos do form 
-    const [proprietarios, setProprietarios] = useState(route.params ?
+    const [veiculos, setVeiculos] = useState(route.params ?
         route.params : {})
 
     //Função que Altera os dados utilizando a API 
@@ -13,7 +13,7 @@ export default ({ route, navigation }) => {
         e.preventDefault();
         try {
             await
-                axios.put(`http://localhost:8081/proprietario/${proprietarios.id_proprietario}`, proprietarios);
+                axios.put(`http://localhost:8081/veiculo/${veiculos.id_veiculo}`, veiculos);
             //navigation.goBack();  
             window.location.reload()
         } catch (err) {
@@ -28,28 +28,28 @@ export default ({ route, navigation }) => {
                 <TextInput
                     readOnly
                     style={styles.input}
-                    onChangeText={id_proprietario => setProprietarios({
-                        ...proprietarios, id_proprietario
+                    onChangeText={id_veiculo => setVeiculos({
+                        ...veiculos, id_veiculo
                     })}
-                    value={proprietarios.id_proprietario}
+                    value={veiculos.id_veiculo}
                 />
 
                 <Text style={styles.text}>Digite seu nome</Text>
                 <TextInput
                     style={styles.input}
-                    onChangeText={nome => setProprietarios({
-                        ...proprietarios, nome
+                    onChangeText={nome => setVeiculos({
+                        ...veiculos, nome
                     })}
-                    value={proprietarios.nome}
+                    value={veiculos.nome}
                 />
 
                 <Text style={styles.text}>Digite seu CPF</Text>
                 <TextInput
                     style={styles.input}
-                    onChangeText={cpf => setProprietarios({
-                        ...proprietarios, cpf
+                    onChangeText={cpf => setVeiculos({
+                        ...veiculos, cpf
                     })}
-                    value={proprietarios.cpf}
+                    value={veiculos.cpf}
                 />
                 <Pressable
                     style={[styles.botao, {

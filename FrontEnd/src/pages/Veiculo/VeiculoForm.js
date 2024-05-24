@@ -3,18 +3,20 @@ import React, { useState } from "react";
 import axios from "axios";
 import styles from './styles.js';
 
-export default function ProprietarioForm() {
+export default function VeiculoForm() {
     //Variáveis state 
-    const [nome, setNome] = useState("");
-    const [cpf, setCPF] = useState("");
+    const [placa, setPlaca] = useState("");
+    const [ano,setAno] = useState("");
+    const [mensalidade, setMensalidade] = useState("");
 
     //Função que Cadastra os dados utilizando a API 
     const handleClick = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:8081/proprietario", {
-                nome: nome,
-                cpf: cpf
+            await axios.post("http://localhost:8081/veiculo", {
+                placa: placa,
+                ano: ano,
+                mensalidade: mensalidade
             });
             window.location.reload()
         } catch (err) {
@@ -26,20 +28,27 @@ export default function ProprietarioForm() {
         <SafeAreaView style={styles.container}>
             <View style={{ alignItems: "center" }}>
 
-                <Text style={styles.text}>Digite seu nome</Text>
+                <Text style={styles.text}>Digite a Placa</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="Digite seu nome"
+                    placeholder="Digite a placa"
                     value={nome}
-                    onChangeText={(texto) => setNome(texto)}
+                    onChangeText={(texto) => setPlaca(texto)}
                 />
 
-                <Text style={styles.text}>Digite seu CPF</Text>
+                <Text style={styles.text}>Digite o Ano do Veículo</Text>
                 <TextInput
                     style={styles.input}
-                    placeholder="Digite seu CPF"
-                    value={cpf}
-                    onChangeText={(texto) => setCPF(texto)}
+                    placeholder="Digite o ano do seu Veiculo"
+                    value={ano}
+                    onChangeText={(texto) => setAno(texto)}
+                />
+                <Text style={styles.text}>Digite a Mensalidade</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Digite a mensalidade"
+                    value={ano}
+                    onChangeText={(texto) => setMensalidade(texto)}
                 />
             </View>
             <View style={styles.areaBtn}>
