@@ -1,4 +1,4 @@
-import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Image, Text, TouchableOpacity, StyleSheet } from 'react-native'; 
 import React from 'react'
 
 const Home = ({ navigation }) => {
@@ -63,4 +63,4 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
 });
-export default Home;
+export default Home; 

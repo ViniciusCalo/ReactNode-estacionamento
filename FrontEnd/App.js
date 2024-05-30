@@ -5,8 +5,8 @@ import ProprietarioList from './src/pages/Proprietario/ProprietarioList';
 import ProprietarioEdit from './src/pages/Proprietario/ProprietarioEdit';
 import VeiculoList from './src/pages/Veiculo/VeiculoList'
 import VeiculoEdit from './src/pages/Veiculo/VeiculoEdit';
-import VeiculoForm from './src/pages/Veiculo/VeiculoForm'
-import Home from './src/pages/Home'
+import VeiculoForm from './src/pages/Veiculo/VeiculoForm';
+import Home from './src/pages/Home';
 import { Icon, Button } from 'react-native-elements';
 
 const Stack = createStackNavigator();
