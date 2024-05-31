@@ -13,7 +13,7 @@ export default ({ route, navigation }) => {
         e.preventDefault();
         try {
             await
-                axios.put(`http://localhost:8081/veiculo/${veiculos.id_veiculo}`, veiculos);
+                axios.put(`http://localhost:8082/veiculo/${veiculos.id_veiculo}`, veiculos);
             //navigation.goBack();  
             window.location.reload()
         } catch (err) {
@@ -34,22 +34,31 @@ export default ({ route, navigation }) => {
                     value={veiculos.id_veiculo}
                 />
 
-                <Text style={styles.text}>Digite seu nome</Text>
+                <Text style={styles.text}>Digite sua placa</Text>
                 <TextInput
                     style={styles.input}
-                    onChangeText={nome => setVeiculos({
-                        ...veiculos, nome
+                    onChangeText={placa => setVeiculos({
+                        ...veiculos, placa
                     })}
-                    value={veiculos.nome}
+                    value={veiculos.placa}
                 />
 
-                <Text style={styles.text}>Digite seu CPF</Text>
+                <Text style={styles.text}>Digite o ano do seu Veiculo</Text>
                 <TextInput
                     style={styles.input}
-                    onChangeText={cpf => setVeiculos({
-                        ...veiculos, cpf
+                    onChangeText={ano => setVeiculos({
+                        ...veiculos, ano
                     })}
-                    value={veiculos.cpf}
+                    value={veiculos.ano}
+                />
+
+                <Text style={styles.text}>Digite a mensalidade do seu Veiculo</Text>
+                <TextInput
+                    style={styles.input}
+                    onChangeText={mensalidade => setVeiculos({
+                        ...veiculos, mensalidade
+                    })}
+                    value={veiculos.mensalidade}
                 />
                 <Pressable
                     style={[styles.botao, {

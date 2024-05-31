@@ -13,7 +13,7 @@ export default function VeiculoForm() {
     const handleClick = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:8081/veiculo", {
+            await axios.post("http://localhost:8081/veiculos", {
                 placa: placa,
                 ano: ano,
                 mensalidade: mensalidade
